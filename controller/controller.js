@@ -35,7 +35,7 @@ const postDatumIn = async (req, res) => {
     if (!comparePass) return res.status(400).json(`Password incorrect!`);
     const { _id: id } = datum;
     const token = jwt.sign({ id }, process.env.JWT, {
-      expiresIn: '900s',
+      expiresIn: '60s',
     });
     res.status(200).json({ id, token });
   } catch (error) {
