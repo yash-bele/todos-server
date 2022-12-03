@@ -1,11 +1,17 @@
 const mongoose = require('mongoose');
 
-const todo = mongoose.Schema({
+const task = new mongoose.Schema({
   id: String,
   title: String,
 });
 
-const user = mongoose.Schema({
+const todo = new mongoose.Schema({
+  id: String,
+  title: String,
+  tasks: [task],
+});
+
+const user = new mongoose.Schema({
   name: String,
   email: String,
   pass: String,
